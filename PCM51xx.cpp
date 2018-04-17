@@ -47,7 +47,7 @@ bool PCM51xx::begin(BitDepth bps)
   };
   writeRegister(I2S_FORMAT, config);
 
-  delay(1); //Wait for calibration, startup, etc
+  delay(10); //Wait for calibration, startup, etc
 
   return getPowerState() == POWER_STATE_RUN;
 }

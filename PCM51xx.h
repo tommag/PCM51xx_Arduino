@@ -221,6 +221,9 @@ public:
   /* Read multiple contiguous registers and return the number of bytes read */
   uint8_t readRegisters(Register startAddress, uint8_t *buffer, uint8_t len);
 
+  /* Get configured I2C address */
+  uint8_t getI2CAddr() { return _i2cAddr; }
+
 private:
   static constexpr uint8_t REG_AUTO_INCREMENT_EN = 0x80; //Auto-increment mode for multiple writes / reads
 

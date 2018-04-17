@@ -45,8 +45,18 @@ void setup()
   else
   {
     Serial.println("Failed to initialize PCM51xx.");
-    Serial.print("Power state : ");
-    Serial.println(pcm.getPowerState());
+    uint8_t powerState = pcm.getPowerState();
+    if (powerState == PCM51xx::POWER_STATE_I2C_FAILURE)
+    {
+      Serial.print("No answer on I2C bus at address ");
+      Serial.println(pcm.getI2CAddr());
+    }
+    else
+    {
+      Serial.print("Power state : ");
+      Serial.println(pcm.getPowerState());
+      Serial.println("Check that the sample rate / bit depth combination is supported.");
+    }
   }
 
   //Set volume
