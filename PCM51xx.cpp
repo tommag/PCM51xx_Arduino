@@ -42,8 +42,8 @@ bool PCM51xx::begin(BitDepth bps)
   uint8_t config = 0;
   switch (bps) {
     case BITS_PER_SAMPLE_16: config = 0x00; break;
-    case BITS_PER_SAMPLE_24: config = 0x10; break;
-    case BITS_PER_SAMPLE_32: config = 0x11; break;
+    case BITS_PER_SAMPLE_24: config = 0x02; break;
+    case BITS_PER_SAMPLE_32: config = 0x03; break;
   };
   writeRegister(I2S_FORMAT, config);
 
