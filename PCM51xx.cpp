@@ -129,8 +129,8 @@ bool PCM51xx::begin(SamplingRate rate, BitDepth bps)
   // Configure PLL
   writeRegister(PLL_P, p - 1);
   writeRegister(PLL_J, j);
-  writeRegister(PLL_D_MSB, (r >> 8) & 0x3F);
-  writeRegister(PLL_D_LSB, r & 0xFF);
+  writeRegister(PLL_D_MSB, (d >> 8) & 0x3F);
+  writeRegister(PLL_D_LSB, d & 0xFF);
   writeRegister(PLL_R, r - 1);
 
   // Clock dividers
