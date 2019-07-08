@@ -143,6 +143,18 @@ bool PCM51xx::begin(SamplingRate rate, BitDepth bps)
   writeRegister(IDAC_MSB, (idac >> 8) & 0xFF);
   writeRegister(IDAC_LSB, idac & 0xFF);
 
+  // FS speed mode
+  int speedMode;
+  if (rate <= SAMPLE_RATE_48K)
+    speedMode = 0;
+  else if (rate <= SAMPLE_RATE_96K)
+    speedMode = 1;
+  else if (rate <= SAMPLE_RATE_192K)
+    speedMode = 2;
+  else
+    speedMode = 3;
+  writeRegister(FS_SPEED_MODE, speedMode);
+
   return begin(bps);
 }
 
