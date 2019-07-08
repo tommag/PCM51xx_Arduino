@@ -1,0 +1,26 @@
+{
+    "name": "PCM51xx",
+    "keywords": "dac, pcm5121, pcm5122, pcm5141, pcm5142, audio, i2s",
+    "description": "Arduino library for TI PCM51xx DAC ICs software configuration via I2C.",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/tommag/PCM51xx_Arduino"
+    },
+    "authors":
+    [
+      {
+        "name": "Tom Magnier",
+        "email": "tom@tmagnier.fr",
+        "maintainer": true
+      }
+    ],
+    "dependencies":
+    {
+      "name": "Wire",
+      "frameworks": "arduino"
+    },
+    "version": "1.1",
+    "frameworks": "arduino",
+    "platforms": "*"
+  }
